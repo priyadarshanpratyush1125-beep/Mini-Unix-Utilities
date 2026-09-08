@@ -77,7 +77,7 @@ The important thing I understood here is that `O_CREAT` is different from simply
 
 ### My Output
 
-```text
+```c
 o/p of 1 exp 
 avatar@gzb:~/Projects/mini-unix-utils/experiments/02_open/BASIC$ ls
 input.txt  newfile.txt  open_basic.c  open_create  open_create.c
@@ -127,7 +127,7 @@ I also understood that opening a file for reading does not mean I can write to i
 
 ### My Output
 
-```text
+```c
 avatar@gzb:~/Projects/mini-unix-utils/experiments/02_open$ cd O_RDONLY/
 avatar@gzb:~/Projects/mini-unix-utils/experiments/02_open/O_RDONLY$ gcc open_RDONLY.c -o open_RDONLY
 avatar@gzb:~/Projects/mini-unix-utils/experiments/02_open/O_RDONLY$ ./open_RDONLY 
@@ -165,7 +165,7 @@ I also experimented with the behavior when trying to perform an operation that t
 
 ### My Output
 
-```text
+```c
 avatar@gzb:~/Projects/mini-unix-utils/experiments/02_open$ cd O_WRONLY/
 avatar@gzb:~/Projects/mini-unix-utils/experiments/02_open/O_WRONLY$ gcc open_WRONLY.c -o open_WRONLY
 avatar@gzb:~/Projects/mini-unix-utils/experiments/02_open/O_WRONLY$ ./open_WRONLY 
@@ -215,7 +215,7 @@ O_RDWR
 
 ### My Output
 
-```text
+```c
 
 avatar@gzb:~/Projects/mini-unix-utils/experiments/02_open/O_RDWR$ ls
 log3.txt  open_RDWR.c
@@ -254,7 +254,7 @@ This is useful for things like log files.
 
 ### My Output
 
-```text
+```c
 avatar@gzb:~/Projects/mini-unix-utils/experiments/02_open/O_APPEND$ nano log.txt
 avatar@gzb:~/Projects/mini-unix-utils/experiments/02_open/O_APPEND$ ls
 does_not_exist.txt  newfile.txt    open_basic    open_create    open_turncate    test.txt
@@ -316,7 +316,7 @@ are commonly used when a program wants to overwrite a file.
 
 ### My Output
 
-```text
+```c
 avatar@gzb:~/Projects/mini-unix-utils/experiments/02_open/O_TRUNC$ ls
 does_not_exist.txt  newfile.txt  open_basic  open_basic.c  open_create  open_create.c  open_turncate.c
 avatar@gzb:~/Projects/mini-unix-utils/experiments/02_open/O_TRUNC$ gcc open_turncate.c -o open_turncate
