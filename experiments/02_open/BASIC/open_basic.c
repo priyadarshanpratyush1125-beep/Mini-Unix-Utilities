@@ -1,6 +1,7 @@
-#include <stdio.h>
-#include <fcntl.h>
-#include <unistd.h>
+#include <stdio.h> // req for prinf and scanf 
+#include <fcntl.h> // req for open() and flags O_RDONLY O_WRONLY etc
+#include <unistd.h>// req for File I/O operations(read(),write(),close(),lseek())
+                   // req for Process management (fork(),exec(),getpid(),pipe())
 
 int main(void)
 {

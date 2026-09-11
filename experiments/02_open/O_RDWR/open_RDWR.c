@@ -15,11 +15,11 @@ int main(void)
         return 1;
     }
 
-    int n = read(fd, buffer, 5);
+    ssize_t n = read(fd, buffer, 5);
 
-    write(1, buffer, n);
+    write(1, buffer, n);  // write on terminal means read test written inside log3.txt
 
-    write(fd, "Pratyush", 8);
+    write(fd, "Pratyush", 8); // write inside log3.txt
 
     close(fd);
 

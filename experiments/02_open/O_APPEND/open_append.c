@@ -6,7 +6,7 @@ int main(void)
 {
     int fd;
 
-    fd = open("log.txt", O_WRONLY | O_APPEND);
+    fd = open("log.txt", O_WRONLY | O_APPEND);  // O_APPEND is used when I want new data to be written at the end of the file
 
     if (fd == -1)
     {
