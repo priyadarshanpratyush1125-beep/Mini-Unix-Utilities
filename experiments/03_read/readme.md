@@ -61,15 +61,16 @@ n = read(fd, buffer, 5);
 For the test file:
 
 ```text
-Hello World
+Hello Pratyush Priydarshan
 ```
 
 I expected only the first 5 bytes to be read.
 
 ### My Output
 
-```text
-PASTE YOUR OUTPUT HERE
+```c
+avatar@gzb:~/Projects/mini-unix-utils/experiments/03_read/Experiment A$ ./read_exactly_5_bytes 
+read() returned: 5
 ```
 
 ### What I learned
@@ -92,8 +93,9 @@ This was to compare how changing `count` affects the result.
 
 ### My Output
 
-```text
-PASTE YOUR OUTPUT HERE
+```c
+avatar@gzb:~/Projects/mini-unix-utils/experiments/03_read/Experiment B$ ./read_exactly_10_bytes 
+read() returned: 10
 ```
 
 ### What I learned
@@ -111,7 +113,7 @@ It does not mean that the entire file will be read.
 I used a file containing:
 
 ```text
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
+PRATYUSH PRIYADARSHAN COLLEGE-ABESEC GZB
 ```
 
 and a buffer of only 10 bytes:
@@ -124,8 +126,9 @@ Then I called `read()` only once.
 
 ### My Output
 
-```text
-PASTE YOUR OUTPUT HERE
+```c
+avatar@gzb:~/Projects/mini-unix-utils/experiments/03_read/Experiment C$ ./File_larger_than_buffer 
+read() returned: 15
 ```
 
 ### What I learned
@@ -158,8 +161,12 @@ n = read(fd, buffer, 10);
 
 ### My Output
 
-```text
-PASTE YOUR OUTPUT HERE
+```c
+avatar@gzb:~/Projects/mini-unix-utils/experiments/03_read/Experiment D$ ./Call_read\(\)_twice 
+First read: 10 bytes
+PRATYUSH P
+Second read: 10 bytes
+RIYADARSHA
 ```
 
 ### What I learned
@@ -169,8 +176,8 @@ The second `read()` continues from the **current file position**.
 For example:
 
 ```text
-First read  → ABCDEFGHIJ
-Second read → KLMNOPQRST
+First read  → PRATYUSH P
+Second read → RIYADARSHA
 ```
 
 So `read()` moves the file position forward after successfully reading data.
@@ -194,8 +201,9 @@ while ((n = read(fd, buffer, sizeof(buffer))) > 0)
 
 ### My Output
 
-```text
-PASTE YOUR OUTPUT HERE
+```c
+avatar@gzb:~/Projects/mini-unix-utils/experiments/03_read/Experiment E$ ./Read_until_EOF 
+PRATYUSH PRIYADARSHAN
 ```
 
 ### What I learned
@@ -229,8 +237,9 @@ empty.txt
 
 ### My Output
 
-```text
-PASTE YOUR OUTPUT HERE
+```c
+avatar@gzb:~/Projects/mini-unix-utils/experiments/03_read/Experiment F$ ./Empty_file 
+read() returned: 0
 ```
 
 ### What I learned
@@ -265,8 +274,9 @@ does_not_exist.txt
 
 ### My Output
 
-```text
-PASTE YOUR OUTPUT HERE
+```c
+avatar@gzb:~/Projects/mini-unix-utils/experiments/03_read/Experiment G$ ./Nonexistent_file 
+open: No such file or directory
 ```
 
 ### What I learned
@@ -317,8 +327,13 @@ EOF  → 0 bytes
 
 ### My Output
 
-```text
-PASTE YOUR OUTPUT HERE
+```c
+avatar@gzb:~/Projects/mini-unix-utils/experiments/03_read/Experiment H$ ./Tiny_4_byte_buffer 
+ABCD
+EFGH
+IJKL
+M
+Read 1: 4 bytes -> Read 2: 4 bytes -> Read 3: 4 bytes -> Read 4: 1 bytes -> EOF reached.
 ```
 
 ### What I learned
