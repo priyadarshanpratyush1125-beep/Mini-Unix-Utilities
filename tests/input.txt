@@ -1,0 +1,4 @@
+Hello, this is my Mini Unix Utilities project.
+I am learning Linux system calls in C.
+This file is used to test mycat.
+The program reads bytes using read() and displays them using write().
